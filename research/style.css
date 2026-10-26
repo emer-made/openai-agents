@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap');
+
+:root, .dark {
+  --bg: #0b0f1a;
+  --panel: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e6e9f2;
+  --muted: #8a93a8;
+  --accent: #7c5cff;
+  --accent-2: #22d3ee;
+}
+
+html, body, gradio-app, .gradio-container {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(124, 92, 255, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, rgba(34, 211, 238, 0.12), transparent 60%),
+    var(--bg) !important;
+  color: var(--text) !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+.gradio-container {
+  width: 100% !important; max-width: none !important; background-attachment: fixed !important;
+}
+.gradio-container .main {
+  max-width: 1400px !important; width: 100% !important; margin: 0 auto !important;
+}
+footer { display: none !important; }
+
+/* Header */
+#header { text-align: left; padding: 28px 8px 8px; }
+#header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.6rem; font-weight: 700; letter-spacing: -0.02em; margin: 0;
+  background-image: linear-gradient(90deg, #ffffff 0%, #22d3ee 50%, #7c5cff 100%) !important;
+  -webkit-background-clip: text !important; background-clip: text !important;
+  -webkit-text-fill-color: transparent !important; color: transparent !important;
+}
+#header p { color: var(--muted); margin: 6px 0 0; font-size: 1rem; }
+
+/* Cards */
+.card {
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 20px !important;
+  padding: 22px !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+.card > * { background: transparent !important; border: none !important; }
+.section-label {
+  color: var(--muted); font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 4px;
+}
+
+/* Query box */
+#query textarea {
+  background: rgba(0, 0, 0, 0.35) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px !important;
+  color: var(--text) !important;
+  font-size: 1.05rem !important;
+  padding: 16px !important;
+  transition: border-color .2s, box-shadow .2s;
+}
+#query textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.2) !important;
+}
+#query label span, #query .label-wrap { display: none !important; }
+
+/* Button */
+#run-btn {
+  background: linear-gradient(135deg, var(--accent) 0%, #5b8cff 50%, var(--accent-2) 100%) !important;
+  border: none !important; border-radius: 14px !important;
+  color: #fff !important; font-weight: 600 !important; font-size: 1.05rem !important;
+  padding: 14px !important; margin-top: 8px;
+  box-shadow: 0 10px 30px rgba(124, 92, 255, 0.35);
+  transition: transform .15s, box-shadow .15s;
+}
+#run-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(124, 92, 255, 0.5); }
+
+/* Example chips */
+.chip {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 999px !important;
+  color: var(--muted) !important;
+  font-size: 0.85rem !important; font-weight: 500 !important;
+  text-align: left !important; justify-content: flex-start !important;
+}
+.chip:hover { color: var(--text) !important; border-color: var(--accent) !important; }
+
+/* Report */
+#report { min-height: 620px; max-height: 78vh; overflow-y: auto; padding: 4px 10px; }
+#report, #report * { color: var(--text); }
+#report h1, #report h2, #report h3 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.01em; }
+#report h1 { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+#report h2 { color: var(--accent-2) !important; margin-top: 1.4em; }
+#report a { color: var(--accent-2) !important; }
+#report code { background: rgba(255,255,255,0.08); border-radius: 6px; padding: 2px 6px; }
+#report blockquote { border-left: 3px solid var(--accent); color: var(--muted); margin: 0; padding-left: 14px; }
+
+.empty-state { text-align: center; padding: 160px 20px; color: var(--muted) !important; }
+.empty-state * { color: var(--muted) !important; }
+.empty-icon { font-size: 3rem; opacity: 0.5; }
